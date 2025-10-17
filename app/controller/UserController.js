@@ -293,8 +293,8 @@ class UserController {
         // Reset Link and this link generate by frontend developer
 
         // Pick the correct frontend URL based on environment
-        // const frontendURL = (process.env.NODE_ENV === "production" ? process.env.FRONTEND_HOST_VERSEL : process.env.FRONTEND_HOST);
-        const resetLink = `${process.env.FRONTEND_HOST}/account/reset-password/${user._id}/${token}`;
+        const frontendURL = (process.env.NODE_ENV === "production" ? process.env.RENDER_HOST : process.env.FRONTEND_HOST);
+        const resetLink = `${frontendURL}/account/reset-password/${user._id}/${token}`;
 
         // Send password reset email via nodemailer
         transporter.sendMail({
