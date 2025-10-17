@@ -46,7 +46,7 @@ class AttendanceController {
             });
         }
 
-        const newAttendance = new AttendanceModel({
+        const newAttendance = await new AttendanceModel({
             courseId: existingCourse._id,
             teacherId: req.user._id,
             studentId,
