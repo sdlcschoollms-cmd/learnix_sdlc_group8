@@ -153,7 +153,7 @@ class AttendanceController {
         }
 
         const updatedDate = new Date(date);
-        const existingAttendance = await AttendanceModel.findOne({ studentId: studentId, courseId: existingCourse._id, date: updatedDate });
+        const existingAttendance = await AttendanceModel.findById(req.params.attendanceId);
         if(!existingAttendance) {
             return res.status(404).json({
                 message: "No attendance data found"
@@ -179,7 +179,7 @@ class AttendanceController {
             message: "Attendance updated successfully",
             data: updatedAttendance
         });
-    } 
+    }
 }
 
 

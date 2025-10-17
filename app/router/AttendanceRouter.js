@@ -17,7 +17,7 @@ router.get("/view/attendance/:courseId",
     wrapAsync(AttendanceController.viewAttendance)
 );
 //update attendance
-router.patch("/update/attendance/:courseId",
+router.patch("/update/attendance/:courseId/:attendanceId",
     authenticationCheck,
     wrapAsync(AttendanceController.updateAttendance)
 );
