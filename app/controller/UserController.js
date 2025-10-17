@@ -202,6 +202,14 @@ class UserController {
             maxAge: refreshTokenMaxAge
         });
 
+        // send a welcome message to mail
+        transporter.sendMail({
+            from: process.env.EMAIL_FROM,
+            to: existingUser.email,
+            subject: "Welcome Message",
+            html: `<b><p>Welcome ${existingUser.firstName},you have successfully login to our website</p></b>`
+        });
+
         //sending final json response
         return res.status(200).json({
             status: true,
