@@ -68,7 +68,7 @@ app.use(handlingErrors);
 
 
 //+++++++++++++++++  Creating Server  ++++++++++++++++++++++
-const port = 8080 || process.env.PORT;
+const port = 8080;
 
 app.listen(port, ()=>{
     console.log(`Server started at ${port}`);
