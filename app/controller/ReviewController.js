@@ -46,7 +46,7 @@ class ReviewController {
             });
         }
         const existingReviews = await ReviewModel.find({ courseId: req.params.courseId })
-        .populate({ path: "studentId", select: "firstName lastName"});
+        .populate({ path: "ownerId", select: "firstName lastName"});
         return res.status(200).json({
             message: "Reviews fetched successfully",
             data: existingReviews

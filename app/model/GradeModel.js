@@ -14,7 +14,7 @@ const GradeSchema = new mongoose.Schema({
     },
     submissionId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        ref: "Submission",
         required: true
     },
     marks: {

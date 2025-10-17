@@ -101,7 +101,7 @@ class CourseController {
             existingCourse.description = description || existingCourse.description;
             existingCourse.subjects = subjects || existingCourse.subjects;
             existingCourse.skillLevel = skillLevel || existingCourse.skillLevel;
-            cretificate.cretificate = cretificate || existingCourse.cretificate;
+            existingCourse.certificate = certificate || existingCourse.certificate;
             if (req.file) {
                 if (existingCourse.image) {
                     await cloudinary.uploader.destroy(existingCourse.image.imageId); // delete old image

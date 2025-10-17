@@ -29,7 +29,7 @@ router.get("/view/assignment/:assignmentId",
 //update assignment
 router.patch("/update/:courseId/assignment/:assignmentId",
     authenticationCheck,
-    uploadOtherFile.single("image"),
+    uploadOtherFile.single("assignmentFile"),
     wrapAsync(AssignmentController.updateAssignment)
 );
 

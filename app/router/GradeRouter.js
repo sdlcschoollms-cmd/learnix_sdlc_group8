@@ -30,7 +30,7 @@ router.patch("/update/grade/:gradeId",
 );
 
 //delete grade
-router.patch("/delete/grade/:gradeId",
+router.delete("/delete/grade/:gradeId",
     authenticationCheck,
     wrapAsync(GradeController.updateGrade)
 );
