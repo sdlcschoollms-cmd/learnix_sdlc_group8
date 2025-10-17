@@ -42,6 +42,11 @@ class UserController {
         };
 
         const { firstName, lastName, email, password, role, studentClass } = req.body;
+        if(!req.file) {
+            return res.status(400).json({
+                message: "Image file is required"
+            });
+        }
 
         //check for existing user
         const existingUser = await UserModel.findOne({ email });
